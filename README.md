@@ -4,7 +4,7 @@ A bilingual Anki note type for learning vocabulary: words, collocations, and phr
 
 **Choose language / Оберіть мову / Выберите язык:**
 
-[🇬🇧 English](README.en.md) &nbsp;·&nbsp; [🇺🇦 Українська](README.ua.md) &nbsp;·&nbsp; [🇷🇺 Русский](README.ru.md)
+[🇬🇧 English](README.en.md) &nbsp;·&nbsp; [🇺🇦 Українська](README.ua.md) &nbsp;·&nbsp; [🇺🇦 Русский](README.ru.md)
 
 ---
 
