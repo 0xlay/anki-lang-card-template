@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anki Card Template Preview</title>
+<style>
+/* ---- Page layout ---- */
+body {
+  font-family: sans-serif;
+  background: #f0ede8;
+  padding: 24px 16px;
+}
+h1 {
+  font-size: 18px;
+  color: #4a3728;
+  margin-bottom: 4px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.page-subtitle {
+  font-size: 12px;
+  color: #a0856c;
+  margin-bottom: 32px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+h2 {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #f4a261;
+  margin: 32px 0 12px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.preview-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.preview-col {
+  flex: 1;
+  min-width: 280px;
+  max-width: 480px;
+}
+.preview-label {
+  font-size: 10px;
+  color: #b0a090;
+  text-align: center;
+  margin-bottom: 6px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   src/style.css — inlined for standalone preview
+   ============================================================ */
+* { box-sizing: border-box; }
+
+.card {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 16px;
+  background: linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+}
+.lc-wrap {
+  width: 100%;
+  background: linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+.lc-image { width: 100%; line-height: 0; }
+.lc-image img { width: 100%; max-height: 200px; object-fit: cover; display: block; }
+.lc-body { padding: 20px; text-align: center; }
+.lc-pos {
+  display: inline-block;
+  background: #f4a261; color: #fff;
+  border-radius: 20px; padding: 3px 14px;
+  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin-bottom: 10px;
+}
+.lc-word { font-size: 2em; font-weight: 700; color: #2d3748; letter-spacing: 0.3px; margin-bottom: 6px; line-height: 1.2; }
+.lc-transcription { font-size: 0.85em; color: #a0856c; margin-bottom: 14px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+.lc-divider { width: 40px; height: 2px; background: #f4a261; opacity: 0.6; border-radius: 2px; margin: 0 auto 16px; }
+.lc-example { font-style: italic; font-size: 0.9em; color: #4a5568; line-height: 1.6; }
+.lc-cloze {
+  background: #f4a261; color: transparent;
+  border-radius: 3px; padding: 0 4px;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+  -webkit-user-select: none; user-select: none;
+}
+.lc-cloze.revealed { background: transparent; color: #2d3748; cursor: default; }
+.lc-audio { margin-top: 14px; font-size: 12px; color: #a0856c; font-family: 'Helvetica Neue', Arial, sans-serif; }
+.lc-accent-bar { height: 5px; background: linear-gradient(90deg, #f4a261, #e76f51); }
+.lc-block { border-radius: 0 6px 6px 0; padding: 10px 14px; margin-bottom: 8px; text-align: left; }
+.lc-block:last-child { margin-bottom: 0; }
+.lc-block--example { background: #fff; border-left: 3px solid #f4a261; }
+.lc-block--native  { background: #fff; border-left: 3px solid #cbd5e0; }
+.lc-block--notes   { background: #fffaf5; border-left: 3px solid #fbd38d; }
+.lc-block-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-family: 'Helvetica Neue', Arial, sans-serif; margin-bottom: 4px; }
+.lc-block--example .lc-block-label { color: #f4a261; }
+.lc-block--native  .lc-block-label { color: #a0aec0; }
+.lc-block--notes   .lc-block-label { color: #c6a35a; }
+.lc-block-content { font-size: 0.875em; line-height: 1.55; font-style: italic; }
+.lc-block--example .lc-block-content { color: #2d3748; }
+.lc-block--native  .lc-block-content { color: #718096; }
+.lc-block--notes   .lc-block-content { color: #918063; font-style: normal; }
+</style>
+</head>
+<body>
+
+<h1>Language Card — Preview</h1>
+<p class="page-subtitle">Нажми на оранжевый блок чтобы раскрыть слово. Resize до 375px для проверки мобильного вида.</p>
+
+<!-- ===================== TARGET → NATIVE ===================== -->
+<h2>Target → Native</h2>
+<div class="preview-row">
+
+  <div class="preview-col">
+    <div class="preview-label">Front</div>
+    <div class="card">
+      <div class="lc-wrap">
+        <div class="lc-image">
+          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=480&h=200&fit=crop" alt="studying">
+        </div>
+        <div class="lc-body">
+          <span class="lc-pos">adjective</span>
+          <div class="lc-word">ambivalent</div>
+          <div class="lc-transcription">/æmˈbɪv.ə.lənt/</div>
+          <div class="lc-divider"></div>
+          <div class="lc-example" id="ex-fn">"She felt [ambivalent] about the decision."</div>
+          <div class="lc-audio">🔊 audio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-col">
+    <div class="preview-label">Back</div>
+    <div class="card">
+      <div class="lc-wrap">
+        <div class="lc-accent-bar"></div>
+        <div class="lc-body">
+          <span class="lc-pos">adjective</span>
+          <div class="lc-word">двойственный</div>
+          <div class="lc-divider"></div>
+          <div class="lc-block lc-block--example">
+            <div class="lc-block-label">Example</div>
+            <div class="lc-block-content" id="ex-bn">"She felt [ambivalent] about the decision."</div>
+          </div>
+          <div class="lc-block lc-block--native">
+            <div class="lc-block-label">Translation</div>
+            <div class="lc-block-content">"Она испытывала двойственные чувства по поводу этого решения."</div>
+          </div>
+          <div class="lc-block lc-block--notes">
+            <div class="lc-block-label">Notes</div>
+            <div class="lc-block-content">often used with "about" · formal register</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===================== NATIVE → TARGET ===================== -->
+<h2>Native → Target</h2>
+<div class="preview-row">
+
+  <div class="preview-col">
+    <div class="preview-label">Front</div>
+    <div class="card">
+      <div class="lc-wrap">
+        <div class="lc-image">
+          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=480&h=200&fit=crop" alt="studying">
+        </div>
+        <div class="lc-body">
+          <span class="lc-pos">adjective</span>
+          <div class="lc-word">двойственный</div>
+          <div class="lc-divider"></div>
+          <div class="lc-block lc-block--native">
+            <div class="lc-block-label">Пример</div>
+            <div class="lc-block-content">"Она испытывала двойственные чувства по поводу этого решения."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-col">
+    <div class="preview-label">Back</div>
+    <div class="card">
+      <div class="lc-wrap">
+        <div class="lc-accent-bar"></div>
+        <div class="lc-body">
+          <span class="lc-pos">adjective</span>
+          <div class="lc-word">ambivalent</div>
+          <div class="lc-transcription">/æmˈbɪv.ə.lənt/</div>
+          <div class="lc-divider"></div>
+          <div class="lc-block lc-block--example">
+            <div class="lc-block-label">Example</div>
+            <div class="lc-block-content" id="ex-nt">"She felt [ambivalent] about the decision."</div>
+          </div>
+          <div class="lc-audio">🔊 audio</div>
+          <div class="lc-block lc-block--notes" style="margin-top:8px">
+            <div class="lc-block-label">Notes</div>
+            <div class="lc-block-content">often used with "about" · formal register</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===================== WITHOUT IMAGE ===================== -->
+<h2>Without image (optional field empty)</h2>
+<div class="preview-row">
+
+  <div class="preview-col">
+    <div class="preview-label">T→N Front (no image)</div>
+    <div class="card">
+      <div class="lc-wrap">
+        <div class="lc-body">
+          <span class="lc-pos">collocation</span>
+          <div class="lc-word">make progress</div>
+          <div class="lc-transcription">/meɪk ˈprəʊ.ɡres/</div>
+          <div class="lc-divider"></div>
+          <div class="lc-example" id="ex-fn2">"We're finally starting to [make progress] on the project."</div>
+          <div class="lc-audio">🔊 audio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-col">
+    <div class="preview-label">T→N Back (no notes)</div>
+    <div class="card">
+      <div class="lc-wrap">
+        <div class="lc-accent-bar"></div>
+        <div class="lc-body">
+          <span class="lc-pos">collocation</span>
+          <div class="lc-word">двигаться вперёд</div>
+          <div class="lc-divider"></div>
+          <div class="lc-block lc-block--example">
+            <div class="lc-block-label">Example</div>
+            <div class="lc-block-content" id="ex-bn2">"We're finally starting to [make progress] on the project."</div>
+          </div>
+          <div class="lc-block lc-block--native">
+            <div class="lc-block-label">Translation</div>
+            <div class="lc-block-content">"Мы наконец-то начинаем двигаться вперёд в этом проекте."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// T→N front: cloze hide (tap to reveal)
+(function () {
+  ['ex-fn', 'ex-fn2'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.innerHTML = el.innerHTML.replace(/\[(.+?)\]/g, function (m, word) {
+      return '<span class="lc-cloze" onclick="this.classList.add(\'revealed\')">' + word + '</span>';
+    });
+  });
+}());
+
+// Back sides: bold, no hiding
+(function () {
+  ['ex-bn', 'ex-nt', 'ex-bn2'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.innerHTML = el.innerHTML.replace(/\[(.+?)\]/g, function (m, word) {
+      return '<strong>' + word + '</strong>';
+    });
+  });
+}());
+</script>
+
+</body>
+</html>

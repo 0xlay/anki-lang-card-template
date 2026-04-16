@@ -1,0 +1,186 @@
+/* ============================================================
+   Language Card — shared styles for all card templates
+   Paste this entire file into Anki's note type "Styling" section
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Anki card root */
+.card {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 16px;
+  background: linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* Card wrapper — constrains width, rounds corners */
+.lc-wrap {
+  width: 100%;
+  max-width: 480px;
+  background: linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+/* ---- Image ---- */
+.lc-image {
+  width: 100%;
+  line-height: 0;
+}
+.lc-image img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---- Body ---- */
+.lc-body {
+  padding: 20px;
+  text-align: center;
+}
+
+/* ---- Part of speech badge ---- */
+.lc-pos {
+  display: inline-block;
+  background: #f4a261;
+  color: #fff;
+  border-radius: 20px;
+  padding: 3px 14px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin-bottom: 10px;
+}
+
+/* ---- Main word / translation ---- */
+.lc-word {
+  font-size: 2em;
+  font-weight: 700;
+  color: #2d3748;
+  letter-spacing: 0.3px;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+/* ---- Transcription ---- */
+.lc-transcription {
+  font-size: 0.85em;
+  color: #a0856c;
+  margin-bottom: 14px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ---- Divider ---- */
+.lc-divider {
+  width: 40px;
+  height: 2px;
+  background: #f4a261;
+  opacity: 0.6;
+  border-radius: 2px;
+  margin: 0 auto 16px;
+}
+
+/* ---- Example sentence ---- */
+.lc-example {
+  font-style: italic;
+  font-size: 0.9em;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+/* ---- Cloze reveal span ---- */
+.lc-cloze {
+  background: #f4a261;
+  color: transparent;
+  border-radius: 3px;
+  padding: 0 4px;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.lc-cloze.revealed {
+  background: transparent;
+  color: #2d3748;
+  cursor: default;
+}
+
+/* ---- Audio wrapper ---- */
+.lc-audio {
+  margin-top: 14px;
+}
+
+/* ---- Accent bar (top of back sides) ---- */
+.lc-accent-bar {
+  height: 5px;
+  background: linear-gradient(90deg, #f4a261, #e76f51);
+}
+
+/* ---- Info blocks (example / native / notes) ---- */
+.lc-block {
+  border-radius: 0 6px 6px 0;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+.lc-block:last-child { margin-bottom: 0; }
+
+.lc-block--example { background: #fff; border-left: 3px solid #f4a261; }
+.lc-block--native  { background: #fff; border-left: 3px solid #cbd5e0; }
+.lc-block--notes   { background: #fffaf5; border-left: 3px solid #fbd38d; }
+
+.lc-block-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin-bottom: 4px;
+}
+.lc-block--example .lc-block-label { color: #f4a261; }
+.lc-block--native  .lc-block-label { color: #a0aec0; }
+.lc-block--notes   .lc-block-label { color: #c6a35a; }
+
+.lc-block-content {
+  font-size: 0.875em;
+  line-height: 1.55;
+  font-style: italic;
+}
+.lc-block--example .lc-block-content { color: #2d3748; }
+.lc-block--native  .lc-block-content { color: #718096; }
+.lc-block--notes   .lc-block-content { color: #918063; font-style: normal; }
+
+/* ============================================================
+   Night mode overrides
+   ============================================================ */
+.night_mode .card {
+  background: linear-gradient(135deg, #2a1f15 0%, #362819 100%);
+}
+.night_mode .lc-wrap {
+  background: linear-gradient(135deg, #2a1f15 0%, #362819 100%);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+}
+.night_mode .lc-word          { color: #f7e9d7; }
+.night_mode .lc-transcription { color: #c4956a; }
+.night_mode .lc-example       { color: #c8b8a8; }
+
+.night_mode .lc-block--example,
+.night_mode .lc-block--native  { background: rgba(255,255,255,0.06); }
+.night_mode .lc-block--notes   { background: rgba(251,211,141,0.08); }
+
+.night_mode .lc-block--example .lc-block-content { color: #f7e9d7; }
+.night_mode .lc-block--native  .lc-block-content { color: #a89080; }
+.night_mode .lc-block--notes   .lc-block-content { color: #c4a86a; }
+
+.night_mode .lc-cloze          { background: #d4834a; }
+.night_mode .lc-cloze.revealed { background: transparent; color: #f7e9d7; }

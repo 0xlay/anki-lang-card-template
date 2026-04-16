@@ -1,0 +1,43 @@
+<div class="lc-wrap">
+
+  <div class="lc-accent-bar"></div>
+
+  <div class="lc-body">
+
+    <span class="lc-pos">{{PartOfSpeech}}</span>
+    <div class="lc-word">{{Word}}</div>
+
+    {{#Transcription}}
+    <div class="lc-transcription">/{{Transcription}}/</div>
+    {{/Transcription}}
+
+    <div class="lc-divider"></div>
+
+    <div class="lc-block lc-block--example">
+      <div class="lc-block-label">Example</div>
+      <div class="lc-block-content" id="lc-ex-nt">{{ExampleTarget}}</div>
+    </div>
+
+    {{#Audio}}
+    <div class="lc-audio" style="text-align:center">{{Audio}}</div>
+    {{/Audio}}
+
+    {{#Notes}}
+    <div class="lc-block lc-block--notes">
+      <div class="lc-block-label">Notes</div>
+      <div class="lc-block-content">{{Notes}}</div>
+    </div>
+    {{/Notes}}
+
+  </div>
+</div>
+
+<script>
+(function () {
+  var el = document.getElementById('lc-ex-nt');
+  if (!el) return;
+  el.innerHTML = el.innerHTML.replace(/\[(.+?)\]/g, function (m, word) {
+    return '<strong>' + word + '</strong>';
+  });
+}());
+</script>

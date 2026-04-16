@@ -1,0 +1,35 @@
+<div class="lc-wrap">
+
+  {{#Image}}
+  <div class="lc-image">{{Image}}</div>
+  {{/Image}}
+
+  <div class="lc-body">
+
+    <span class="lc-pos">{{PartOfSpeech}}</span>
+    <div class="lc-word">{{Word}}</div>
+
+    {{#Transcription}}
+    <div class="lc-transcription">/{{Transcription}}/</div>
+    {{/Transcription}}
+
+    <div class="lc-divider"></div>
+
+    <div class="lc-example" id="lc-ex-fn">{{ExampleTarget}}</div>
+
+    {{#Audio}}
+    <div class="lc-audio">{{Audio}}</div>
+    {{/Audio}}
+
+  </div>
+</div>
+
+<script>
+(function () {
+  var el = document.getElementById('lc-ex-fn');
+  if (!el) return;
+  el.innerHTML = el.innerHTML.replace(/\[(.+?)\]/g, function (m, word) {
+    return '<span class="lc-cloze" onclick="this.classList.add(\'revealed\')">' + word + '</span>';
+  });
+}());
+</script>
