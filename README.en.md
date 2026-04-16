@@ -1,6 +1,6 @@
 # Language Card — Anki Template
 
-**Language / Мова / Язык:** 🇬🇧 English &nbsp;·&nbsp; [🇺🇦 Українська](README.ua.md) &nbsp;·&nbsp; [🇷🇺 Русский](README.ru.md)
+**Language / Мова / Язык:** 🇬🇧 English &nbsp;·&nbsp; [🇺🇦 Українська](README.ua.md) &nbsp;·&nbsp; [🇺🇦 Русский](README.ru.md)
 
 ---
 
