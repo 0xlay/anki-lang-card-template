@@ -35,9 +35,20 @@
 <script>
 (function () {
   var el = document.getElementById('lc-ex-nt');
-  if (!el) return;
-  el.innerHTML = el.innerHTML.replace(/\[(.+?)\]/g, function (m, word) {
-    return '<strong>' + word + '</strong>';
-  });
+  if (el) {
+    el.innerHTML = el.innerHTML.replace(/\[(.+?)\]/g, function (m, word) {
+      return '<strong>' + word + '</strong>';
+    });
+  }
+
+  var typed = (localStorage.getItem('lc-typeans') || '').trim();
+  if (!typed) return;
+  var correct = '{{Word}}'.trim().toLowerCase();
+  var isCorrect = typed.toLowerCase() === correct;
+  var html = isCorrect
+    ? '<div class="lc-typeans-result lc-typeans-result--correct">\u2713\u00a0 <em>' + typed + '</em></div>'
+    : '<div class="lc-typeans-result lc-typeans-result--wrong">\u2717\u00a0 <em>' + typed + '</em>\u00a0 \u2192\u00a0 <strong>{{Word}}</strong></div>';
+  var body = document.querySelector('.lc-body');
+  if (body) body.insertAdjacentHTML('beforeend', html);
 }());
 </script>

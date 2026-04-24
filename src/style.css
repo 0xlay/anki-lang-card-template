@@ -19,6 +19,7 @@
   align-items: flex-start;
   justify-content: center;
   padding: 16px;
+  overflow: hidden;
 }
 
 /* Card wrapper — constrains width, rounds corners */
@@ -184,3 +185,77 @@
 
 .night_mode .lc-cloze          { background: #d4834a; }
 .night_mode .lc-cloze.revealed { background: transparent; color: #f7e9d7; }
+
+/* ---- Type-answer input ---- */
+.lc-typeans {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  margin-top: 16px;
+  border: 2px solid #f4a261;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: inherit;
+  color: #2d3748;
+  background: #fff;
+  outline: none;
+  text-align: center;
+}
+.lc-typeans:focus    { border-color: #e76f51; }
+.lc-typeans:disabled { opacity: 0.7; background: #fafafa; }
+
+.lc-typeans-btn {
+  display: block;
+  width: 100%;
+  margin: 8px 0 0 0;
+  padding: 10px 14px;
+  background: linear-gradient(90deg, #f4a261, #e76f51);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95em;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 0.5px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.lc-typeans-btn:disabled { opacity: 0.45; cursor: default; }
+
+/* ---- Type-answer result block (injected on back) ---- */
+.lc-typeans-result {
+  padding: 10px 16px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9em;
+  text-align: center;
+}
+.lc-typeans-result--correct {
+  background: #f0fff4;
+  border-bottom: 2px solid #48bb78;
+  color: #276749;
+}
+.lc-typeans-result--wrong {
+  background: #fff5f5;
+  border-bottom: 2px solid #fc8181;
+  color: #c53030;
+}
+
+/* Night mode overrides */
+.night_mode .lc-typeans {
+  background: rgba(255,255,255,0.08);
+  color: #f7e9d7;
+  border-color: #d4834a;
+}
+.night_mode .lc-typeans:focus    { border-color: #f4a261; }
+.night_mode .lc-typeans:disabled { background: rgba(255,255,255,0.04); }
+.night_mode .lc-typeans-result--correct {
+  background: rgba(72,187,120,0.12);
+  border-color: #48bb78;
+  color: #9ae6b4;
+}
+.night_mode .lc-typeans-result--wrong {
+  background: rgba(252,129,129,0.12);
+  border-color: #fc8181;
+  color: #feb2b2;
+}

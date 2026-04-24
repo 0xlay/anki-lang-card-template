@@ -21,15 +21,37 @@
     <div class="lc-audio">{{Audio}}</div>
     {{/Audio}}
 
+    <input id="lc-typeans" class="lc-typeans" type="text"
+           placeholder="Type the translation…"
+           autocomplete="off" autocorrect="off"
+           autocapitalize="off" spellcheck="false">
+    <button id="lc-typeans-btn" class="lc-typeans-btn">Check</button>
+
   </div>
 </div>
 
 <script>
 (function () {
   var el = document.getElementById('lc-ex-fn');
-  if (!el) return;
-  el.innerHTML = el.innerHTML.replace(/\[(.+?)\]/g, function (m, word) {
-    return '<span class="lc-cloze" onclick="this.classList.add(\'revealed\')">' + word + '</span>';
+  if (el) {
+    el.innerHTML = el.innerHTML.replace(/\[(.+?)\]/g, function (m, word) {
+      return '<span class="lc-cloze" onclick="this.classList.add(\'revealed\')">' + word + '</span>';
+    });
+  }
+  var inp = document.getElementById('lc-typeans');
+  var btn = document.getElementById('lc-typeans-btn');
+  localStorage.removeItem('lc-typeans');
+  inp.focus();
+  function lock() {
+    inp.disabled = true;
+    btn.disabled = true;
+  }
+  inp.addEventListener('input', function () {
+    localStorage.setItem('lc-typeans', inp.value);
   });
+  inp.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') lock();
+  });
+  btn.addEventListener('click', lock);
 }());
 </script>

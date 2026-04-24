@@ -16,5 +16,31 @@
       <div class="lc-block-content">{{ExampleNative}}</div>
     </div>
 
+    <input id="lc-typeans" class="lc-typeans" type="text"
+           placeholder="Type the word…"
+           autocomplete="off" autocorrect="off"
+           autocapitalize="off" spellcheck="false">
+    <button id="lc-typeans-btn" class="lc-typeans-btn">Check</button>
+
   </div>
 </div>
+
+<script>
+(function () {
+  var inp = document.getElementById('lc-typeans');
+  var btn = document.getElementById('lc-typeans-btn');
+  localStorage.removeItem('lc-typeans');
+  inp.focus();
+  function lock() {
+    inp.disabled = true;
+    btn.disabled = true;
+  }
+  inp.addEventListener('input', function () {
+    localStorage.setItem('lc-typeans', inp.value);
+  });
+  inp.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') lock();
+  });
+  btn.addEventListener('click', lock);
+}());
+</script>
